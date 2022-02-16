@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'chat_screen.dart';
 
 class RegistrationScreen extends StatelessWidget {
-  static String id = 'registration_screen';
+  static const String id = 'registration_screen';
 
   const RegistrationScreen({Key? key}) : super(key: key);
 
@@ -39,12 +39,12 @@ class RegistrationScreen extends StatelessWidget {
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide:
-                          const BorderSide(width: 3, color: Colors.blue),
+                          BorderSide(width: 3, color: Colors.blue.shade200),
                       borderRadius: BorderRadius.circular(30),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide:
-                          BorderSide(width: 3, color: Colors.blue.shade200),
+                          const BorderSide(width: 3, color: Colors.blue),
                       borderRadius: BorderRadius.circular(30),
                     ),
                     hintText: 'Enter Your Email',
@@ -66,7 +66,7 @@ class RegistrationScreen extends StatelessWidget {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide:
-                          const BorderSide(width: 3, color: Colors.blueAccent),
+                          const BorderSide(width: 3, color: Colors.blue),
                       borderRadius: BorderRadius.circular(30),
                     ),
                     hintText: 'Enter Your Password',

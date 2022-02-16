@@ -3,7 +3,9 @@ import 'package:chat/screens/registeration_screen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  static String id = 'welcome_screen';
+  // static to use it by the class itself
+  // constant to avoid change it by any body
+  static const String id = 'welcome_screen';
   const WelcomeScreen({Key? key}) : super(key: key);
 
   @override
@@ -31,13 +33,13 @@ class WelcomeScreen extends StatelessWidget {
                       width: 50,
                     ),
                   ),
-                  const Text(
+                  Text(
                     'Flash Chat',
                     style: TextStyle(
                       fontSize: 54,
-                      color: Colors.black,
+                      color: Colors.black.withOpacity(0.6),
                       fontWeight: FontWeight.bold,
-                      letterSpacing: 0.6,
+                      letterSpacing: 0.2,
                     ),
                   )
                 ],
