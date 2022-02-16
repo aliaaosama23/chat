@@ -1,9 +1,10 @@
+import 'package:chat/CustomWidgets/rounded_button.dart';
 import 'package:chat/screens/login_screen.dart';
 import 'package:chat/screens/registeration_screen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  // static to use it by the class itself
+  // static : to be used  by the class itself
   // constant to avoid change it by any body
   static const String id = 'welcome_screen';
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -65,40 +66,6 @@ class WelcomeScreen extends StatelessWidget {
               ),
               const Spacer(flex: 10)
             ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class RoundedButton extends StatelessWidget {
-  const RoundedButton({
-    required this.text,
-    required this.color,
-    required this.onPress,
-    Key? key,
-  }) : super(key: key);
-  final String text;
-  final Color color;
-  final void Function()? onPress;
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPress,
-      child: Text(
-        text,
-        style: const TextStyle(fontSize: 16),
-      ),
-      style: ButtonStyle(
-        padding: MaterialStateProperty.all(
-          const EdgeInsets.all(18),
-        ),
-        backgroundColor: MaterialStateProperty.all(color),
-        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30.0),
           ),
         ),
       ),
