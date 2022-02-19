@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.lolo.chat">
+    package="com.LoLo.chat">
    <application
         android:label="chat"
         android:icon="@mipmap/launcher_icon">

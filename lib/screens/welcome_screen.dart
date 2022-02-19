@@ -3,11 +3,29 @@ import 'package:chat/screens/login_screen.dart';
 import 'package:chat/screens/registeration_screen.dart';
 import 'package:flutter/material.dart';
 
-class WelcomeScreen extends StatelessWidget {
+class WelcomeScreen extends StatefulWidget {
   // static : to be used  by the class itself
   // constant to avoid change it by any body
   static const String id = 'welcome_screen';
   const WelcomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<WelcomeScreen> createState() => _WelcomeScreenState();
+}
+
+class _WelcomeScreenState extends State<WelcomeScreen>
+    with SingleTickerProviderStateMixin {
+  late AnimationController controller;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +47,10 @@ class WelcomeScreen extends StatelessWidget {
                 children: [
                   Hero(
                     tag: 'logo',
-                    child: Image.asset(
-                      'assets/images/flash.png',
+                    child: SizedBox(
+                      child: Image.asset(
+                        'assets/images/flash.png',
+                      ),
                       width: 50,
                     ),
                   ),
@@ -38,9 +58,9 @@ class WelcomeScreen extends StatelessWidget {
                     'Flash Chat',
                     style: TextStyle(
                       fontSize: 54,
-                      color: Colors.black.withOpacity(0.6),
+                      color: Colors.black.withOpacity(0.5),
                       fontWeight: FontWeight.bold,
-                      letterSpacing: 0.2,
+                      fontFamily: 'RobotoSerif',
                     ),
                   )
                 ],

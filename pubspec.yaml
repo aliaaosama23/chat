@@ -34,3 +34,6 @@ flutter:
     - family: Cairo
       fonts:
         - asset: assets/fonts/Cairo-VariableFont_wght.ttf
+    - family: RobotoSerif
+      fonts:
+        - asset: assets/fonts/RobotoSerif.ttf

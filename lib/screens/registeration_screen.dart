@@ -25,8 +25,10 @@ class RegistrationScreen extends StatelessWidget {
                 ),
                 Hero(
                   tag: 'logo',
-                  child: Image.asset(
-                    'assets/images/flash.png',
+                  child: SizedBox(
+                    child: Image.asset(
+                      'assets/images/flash.png',
+                    ),
                     width: 50,
                     height: 200,
                   ),
@@ -75,7 +77,7 @@ class RegistrationScreen extends StatelessWidget {
                   ),
                 ),
                 const Spacer(
-                  flex: 1,
+                  flex: 3,
                 ),
                 RoundedButton(
                   onPress: () {
