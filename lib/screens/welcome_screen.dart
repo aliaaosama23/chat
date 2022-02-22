@@ -2,6 +2,7 @@ import 'package:chat/CustomWidgets/rounded_button.dart';
 import 'package:chat/screens/login_screen.dart';
 import 'package:chat/screens/registeration_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class WelcomeScreen extends StatefulWidget {
   // static : to be used  by the class itself
@@ -16,20 +17,44 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController controller;
+  late Animation animation;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     controller = AnimationController(
+      duration: const Duration(seconds: 2),
       vsync: this,
-      duration: const Duration(seconds: 1),
+      //upperBound: 54,
+      //lowerBound: 10,
     );
+    controller.forward();
+
+    //animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+    animation =
+        ColorTween(begin: Colors.white, end: Colors.grey).animate(controller);
+    print(animation.value);
+    animation.addStatusListener((status) {
+      print(animation.status);
+      // if (animation.isCompleted) {
+      //   controller.reverse(from: 1);
+      // } else if (animation.isDismissed) {
+      //   controller.forward();
+      // }
+    });
+    controller.addListener(() {
+      setState(() {});
+      print(controller.value);
+      print(animation.value);
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor:
+          animation.value, //Colors.white.withOpacity(controller.value),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -47,21 +72,32 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                 children: [
                   Hero(
                     tag: 'logo',
-                    child: SizedBox(
+                    child: Container(
                       child: Image.asset(
                         'assets/images/flash.png',
                       ),
                       width: 50,
+                      //height: animation.value * 50,
                     ),
                   ),
-                  Text(
-                    'Flash Chat',
-                    style: TextStyle(
-                      fontSize: 54,
-                      color: Colors.black.withOpacity(0.5),
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'RobotoSerif',
-                    ),
+                  AnimatedTextKit(
+                    animatedTexts: [
+                      TyperAnimatedText(
+                        'Flash Chat',
+                        textStyle: TextStyle(
+                          fontSize: 54, //animation.value * 50, // 54,
+                          //controller.value * 50, // 54, //controller.value,
+                          color: Colors.black.withOpacity(0.5),
+                          fontWeight: FontWeight.w900,
+                          fontFamily: 'RobotoSerif',
+                        ),
+                        speed: const Duration(milliseconds: 500),
+                      )
+                    ],
+                    totalRepeatCount: 2,
+                    pause: const Duration(milliseconds: 1000),
+                    displayFullTextOnTap: true,
+                    stopPauseOnTap: true,
                   )
                 ],
               ),
@@ -90,5 +126,12 @@ class _WelcomeScreenState extends State<WelcomeScreen>
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    controller.dispose();
   }
 }

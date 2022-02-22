@@ -37,17 +37,15 @@ class LoginScreen extends StatelessWidget {
                 ),
                 TextField(
                   textAlign: TextAlign.center,
-                  style: const TextStyle(color: Colors.black, fontSize: 18),
+                  style: const TextStyle(color: Colors.black, fontSize: 15),
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(width: 3, color: Colors.blue.shade200),
-                      borderRadius: BorderRadius.circular(30),
+                      borderSide: BorderSide(color: Colors.blue.shade200),
+                      borderRadius: BorderRadius.circular(25),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide:
-                          const BorderSide(width: 3, color: Colors.blueAccent),
-                      borderRadius: BorderRadius.circular(30),
+                      borderSide: const BorderSide(color: Colors.blueAccent),
+                      borderRadius: BorderRadius.circular(25),
                     ),
                     hintText: 'Enter Your Email',
                     hintStyle: const TextStyle(color: Colors.grey),
@@ -59,17 +57,15 @@ class LoginScreen extends StatelessWidget {
                 TextField(
                   obscureText: true,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(color: Colors.black, fontSize: 18),
+                  style: const TextStyle(color: Colors.black, fontSize: 15),
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(width: 3, color: Colors.blue.shade200),
-                      borderRadius: BorderRadius.circular(30),
+                      borderSide: BorderSide(color: Colors.blue.shade200),
+                      borderRadius: BorderRadius.circular(25),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide:
-                          const BorderSide(width: 3, color: Colors.blueAccent),
-                      borderRadius: BorderRadius.circular(30),
+                      borderSide: const BorderSide(color: Colors.blueAccent),
+                      borderRadius: BorderRadius.circular(25),
                     ),
                     hintText: 'Enter Your Password',
                     hintStyle: const TextStyle(color: Colors.grey),
