@@ -1,6 +1,5 @@
-import 'package:chat/CustomWidgets/rounded_button.dart';
+import 'package:chat/components/rounded_button.dart';
 import 'package:chat/screens/chat_screen.dart';
-import 'package:chat/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {

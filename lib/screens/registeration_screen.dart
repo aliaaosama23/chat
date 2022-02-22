@@ -1,5 +1,4 @@
-import 'package:chat/CustomWidgets/rounded_button.dart';
-import 'package:chat/screens/welcome_screen.dart';
+import 'package:chat/components/rounded_button.dart';
 import 'package:flutter/material.dart';
 
 import 'chat_screen.dart';
